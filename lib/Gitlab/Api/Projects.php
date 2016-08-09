@@ -472,7 +472,7 @@ class Projects extends AbstractApi
     public function removeVariable($project_id, $key)
     {
         return $this->delete($this->getProjectPath($project_id, 'variables/'.$this->encodePath($key)));
-
+    }
 
     /**
      * @param int $project_id
