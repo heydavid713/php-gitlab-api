@@ -44,11 +44,12 @@ abstract class AbstractApi implements ApiInterface
      * @param string $path
      * @param array $parameters
      * @param array $requestHeaders
+     * @param array $files
      * @return mixed
      */
-    protected function get($path, array $parameters = array(), $requestHeaders = array())
+    protected function get($path, array $parameters = array(), $requestHeaders = array(),, array $files = array())
     {
-        $response = $this->client->getHttpClient()->get($path, $parameters, $requestHeaders);
+        $response = $this->client->getHttpClient()->get($path, $parameters, $requestHeaders,$files);
 
         return $response->getContent();
     }

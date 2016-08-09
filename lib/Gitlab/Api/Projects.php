@@ -472,5 +472,15 @@ class Projects extends AbstractApi
     public function removeVariable($project_id, $key)
     {
         return $this->delete($this->getProjectPath($project_id, 'variables/'.$this->encodePath($key)));
+
+
+    /**
+     * @param int $project_id
+     * @param string $file
+     * @return mixed
+     */
+    public function uploadFile($project_id, $file)
+    {
+        return $this->post($this->getProjectPath($project_id, 'uploads'), array(), array(), array('file' => $file));
     }
 }
